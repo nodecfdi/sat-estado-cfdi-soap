@@ -11,7 +11,7 @@ export class SoapClientFactory {
    *
    */
   constructor(customSoapOptions?: Record<string, unknown>) {
-    this.customSoapOptions = customSoapOptions ?? {};
+    this.customSoapOptions = customSoapOptions || {};
   }
 
   public finalSoapOptions(): Record<string, unknown> {
@@ -22,15 +22,14 @@ export class SoapClientFactory {
   }
 
   public async create(serviceLocation: string): Promise<Client> {
-    const client = await this.createSoapClientWithOptions(serviceLocation, this.finalSoapOptions());
-    return client;
+    return this.createSoapClientWithOptions(serviceLocation, this.finalSoapOptions());
   }
 
   protected async createSoapClientWithOptions(
     serviceLocation: string,
     options: Record<string, unknown>,
   ): Promise<Client> {
-    return await createClientAsync(serviceLocation, options);
+    return createClientAsync(serviceLocation, options);
   }
 
   public getCustomSoapOptions(): Record<string, unknown> {

@@ -12,7 +12,7 @@ export class SoapConsumerClient implements ConsumerClientInterface {
   private soapClientFactory: SoapClientFactory;
 
   constructor(factory?: SoapClientFactory) {
-    this.soapClientFactory = factory ?? new SoapClientFactory();
+    this.soapClientFactory = factory || new SoapClientFactory();
   }
 
   public getSoapClientFactory(): SoapClientFactory {
