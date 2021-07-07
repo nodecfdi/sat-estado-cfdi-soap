@@ -1,7 +1,7 @@
 {
-  "name": "@nodecfdi/nodets-lib-template",
+  "name": "@nodecfdi/sat-estado-cfdi-soap",
   "version": "1.0.0",
-  "description": "",
+  "description": "Consulta el estado de un CFDI en el webservice del SAT usando SOAP (sin WSDL)",
   "main": "dist/index.js",
   "files": [
     "dist",
@@ -15,9 +15,24 @@
     "test": "jest",
     "coverage": "jest --coverage"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodecfdi/sat-estado-cfdi-soap.git"
+  },
+  "keywords": [
+    "SAT",
+    "estado",
+    "consulta",
+    "cfdi",
+    "servicio",
+    "soap"
+  ],
   "author": "OcelotlStudio <contacto@ocelotlstudio.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nodecfdi/sat-estado-cfdi-soap/issues"
+  },
+  "homepage": "https://github.com/nodecfdi/sat-estado-cfdi-soap#readme",
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
