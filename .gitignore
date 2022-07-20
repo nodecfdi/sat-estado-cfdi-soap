@@ -8,3 +8,4 @@ dist/
 scratch
 *.tsbuildinfo
 .pnpm-debug.log
+pnpm-lock.yaml
