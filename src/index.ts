@@ -1,8 +1,2 @@
-/** Hello world */
-import { SoapClientFactory } from './SoapClientFactory';
-import { SoapConsumerClient } from './SoapConsumerClient';
-
-export { SoapClientFactory, SoapConsumerClient };
-
-Object.assign(module.exports, SoapConsumerClient);
-Object.assign(module.exports, SoapClientFactory);
+export * from './soap-client-factory';
+export * from './soap-consumer-client';

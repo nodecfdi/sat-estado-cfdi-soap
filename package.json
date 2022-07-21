@@ -54,6 +54,7 @@
         "@changesets/cli": "^2.23.2",
         "@commitlint/cli": "^17.0.3",
         "@commitlint/config-conventional": "^17.0.3",
+        "@nodecfdi/cfdi-expresiones": "^2.1.2",
         "@types/jest": "^28.1.6",
         "@types/node": "^18.0.6",
         "@typescript-eslint/eslint-plugin": "^5.30.7",
@@ -81,7 +82,7 @@
         "zx": "^7.0.7"
     },
     "dependencies": {
-        "@nodecfdi/sat-estado-cfdi": "^2.0.1",
+        "@nodecfdi/sat-estado-cfdi": "^2.0.2",
         "soap": "^0.45.0"
     },
     "engines": {
