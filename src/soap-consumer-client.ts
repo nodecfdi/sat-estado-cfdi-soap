@@ -3,7 +3,7 @@ import { ConsumerClientInterface, ConsumerClientResponse } from '@nodecfdi/sat-e
 import { AxiosInstance } from 'axios';
 import { SoapClientFactory } from './soap-client-factory';
 
-interface Response extends Record<string, string | null> {
+export interface Response extends Record<string, string | null> {
     CodigoEstatus: string;
     EsCancelable: null | string;
     Estado: string;
