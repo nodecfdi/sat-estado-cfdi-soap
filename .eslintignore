@@ -1,5 +1,7 @@
-dist
 node_modules
-.husky
-commitlint.config.js
-jest.config.js
+dist
+docs
+examples
+coverage
+web_modules
+tsconfig.json
