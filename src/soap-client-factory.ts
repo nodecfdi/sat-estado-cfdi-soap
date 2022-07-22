@@ -1,16 +1,21 @@
-import { Client, createClientAsync } from 'soap';
+import axios, { AxiosInstance } from 'axios';
 
 export class SoapClientFactory {
     public static DEFAULT_OPTIONS = {
-        timeout: 10000 // 10 seconds for timeout
+        timeout: 10000, // 10 seconds for timeout
+        headers: { 'Content-Type': 'text/xml', 'SoapAction': 'http://tempuri.org/IConsultaCFDIService/Consulta' }
     };
 
-    private customSoapOptions: Record<string, unknown>;
+    private customSoapOptions: {
+        baseURL?: string;
+        timeout?: number;
+        headers?: Record<string, string>;
+    };
 
     /**
      *
      */
-    constructor(customSoapOptions?: Record<string, unknown>) {
+    constructor(customSoapOptions?: { baseURL?: string; timeout?: number; headers?: Record<string, string> }) {
         this.customSoapOptions = customSoapOptions || {};
     }
 
@@ -21,15 +26,15 @@ export class SoapClientFactory {
         };
     }
 
-    public async create(serviceLocation: string): Promise<Client> {
+    public create(serviceLocation: string): AxiosInstance {
         return this.createSoapClientWithOptions(serviceLocation, this.finalSoapOptions());
     }
 
-    protected async createSoapClientWithOptions(
-        serviceLocation: string,
-        options: Record<string, unknown>
-    ): Promise<Client> {
-        return createClientAsync(serviceLocation, options);
+    protected createSoapClientWithOptions(serviceLocation: string, options: Record<string, unknown>): AxiosInstance {
+        return axios.create({
+            baseURL: serviceLocation,
+            ...options
+        });
     }
 
     public getCustomSoapOptions(): Record<string, unknown> {
