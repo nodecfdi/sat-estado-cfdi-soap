@@ -86,7 +86,8 @@
     },
     "dependencies": {
         "@nodecfdi/cfdiutils-common": "^1.2.1",
-        "@nodecfdi/sat-estado-cfdi": "^2.0.2"
+        "@nodecfdi/sat-estado-cfdi": "^2.0.2",
+        "axios": "^0.27.2"
     },
     "engines": {
         "node": ">= 12.0.0"
