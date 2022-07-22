@@ -39,8 +39,6 @@ export class SpySoapConsumerClient extends SoapConsumerClient {
         this.lastSoapClient = client;
         this.lastArguments = args;
 
-        return new Promise((resolve) => {
-            resolve(this.callConsultaReturn);
-        });
+        return Promise.resolve(this.callConsultaReturn);
     }
 }
