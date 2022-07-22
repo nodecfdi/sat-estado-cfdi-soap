@@ -45,11 +45,16 @@ yarn add @nodecfdi/sat-estado-cfdi-soap
 ## Ejemplo básico de uso
 
 ```ts
-import { SoapConsumerClient } from '@nodecfdi/sat-estado-cfdi-soap';
+import { SoapConsumerClient, SoapClientFactory } from '@nodecfdi/sat-estado-cfdi-soap';
 import { Consumer } from '@nodecfdi/sat-estado-cfdi';
 
+
+// puedes usar el SoapClientFactory para mandar opciones custom al subyacente cliente axios (https://axios-http.com/docs/req_config).
+const soapClientFactory = new SoapClientFactory({ timeout: 100000 });
+
 // crear la instancia básica del Cliente Soap para el consumidor
-const client = new SoapConsumerClient();
+// puedes omitir el envío del param soapClientFactory si quieres usar el cliente por default.
+const client = new SoapConsumerClient(soapClientFactory);
 
 // creamos el consumidor con nuestro cliente
 const consumer = new Consumer(client);
