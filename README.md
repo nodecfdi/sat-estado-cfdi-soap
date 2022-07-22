@@ -30,6 +30,8 @@ el archivo WSDL porque el servicio del SAT ya no lo ofrece.
 
 Esta librería está inspirada en: <https://github.com/phpcfdi/sat-estado-cfdi-soap/>
 
+Se necesita una libreria compatible que proporcione las funciones del dom para el ejemplo se uso [@xmldom/xmldom](https://github.com/xmldom/xmldom).
+
 ## Instalación
 
 ```bash
@@ -47,7 +49,10 @@ yarn add @nodecfdi/sat-estado-cfdi-soap
 ```ts
 import { SoapConsumerClient, SoapClientFactory } from '@nodecfdi/sat-estado-cfdi-soap';
 import { Consumer } from '@nodecfdi/sat-estado-cfdi';
+import { install } from '@nodecfdi/cfdiutils-common';
+import { DOMParser, XMLSerializer, DOMImplementation } from '@xmldom/xmldom';
 
+install(new DOMParser(), new XMLSerializer(), new DOMImplementation());
 
 // puedes usar el SoapClientFactory para mandar opciones custom al subyacente cliente axios (https://axios-http.com/docs/req_config).
 const soapClientFactory = new SoapClientFactory({ timeout: 100000 });
