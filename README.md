@@ -35,13 +35,15 @@ Se necesita una libreria compatible que proporcione las funciones del dom para e
 ## Instalación
 
 ```bash
-npm i @nodecfdi/sat-estado-cfdi-soap --save
+npm i axios @nodecfdi/sat-estado-cfdi-soap --save
 ```
 
-o
+```bash
+yarn add axios @nodecfdi/sat-estado-cfdi-soap
+```
 
 ```bash
-yarn add @nodecfdi/sat-estado-cfdi-soap
+pnpm add axios @nodecfdi/sat-estado-cfdi-soap
 ```
 
 ## Ejemplo básico de uso
