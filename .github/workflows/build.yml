@@ -38,7 +38,7 @@ jobs:
           version: 6.23.6
           run_install: |
             - recursive: true
-              args: [--strict-peer-dependencies]
+              args: [--auto-install-peers]
 
       - name: Lint source
         run: |
