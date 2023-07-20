@@ -12,7 +12,10 @@
 /sonar-project.properties   export-ignore
 
 # Do not count these files on github code language
+/tests/_files/**            linguist-detectable=false
 /docs/**                    linguist-detectable=false
 /.husky/**                  linguist-detectable=false
 *.cjs                       linguist-detectable=false
-/examples/**                linguist-detectable=false
+*.mjs                       linguist-detectable=false
+
+*.json                      linguist-language=JSON-with-Comments
