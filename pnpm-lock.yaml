@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@nodecfdi/cfdiutils-common':
-    specifier: ^1.2.5
-    version: 1.2.5
+    specifier: ^1.2.6
+    version: 1.2.6
   '@nodecfdi/sat-estado-cfdi':
     specifier: ^2.0.2
     version: 2.0.2
@@ -71,8 +71,8 @@ devDependencies:
     specifier: ^5.1.6
     version: 5.1.6
   vite:
-    specifier: ^4.4.5
-    version: 4.4.5(@types/node@20.4.2)
+    specifier: ^4.4.7
+    version: 4.4.7(@types/node@20.4.2)
   vitest:
     specifier: ^0.33.0
     version: 0.33.0
@@ -822,8 +822,8 @@ packages:
     engines: {node: '>= 16'}
     dev: true
 
-  /@nodecfdi/cfdiutils-common@1.2.5:
-    resolution: {integrity: sha512-1VB/0TTh+z7o83CaJNFQ4C6IHK5HjtAVXjVwAvOEpslH9sPXvM1nXlOZITCCTDQN0yuigEY8ZNU70aax7HOBzg==}
+  /@nodecfdi/cfdiutils-common@1.2.6:
+    resolution: {integrity: sha512-WbO++/hZKmeXnkLOe37G2oxxr0QbIUkxqJi9dBmstFMI6ktD+Uhy1OHH4H5yWmURNZ3PKgzPp5w9SDOTEDhcxA==}
     engines: {node: '>=16.0.0'}
     dev: false
 
@@ -4859,7 +4859,7 @@ packages:
       mlly: 1.4.0
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 4.4.5(@types/node@20.4.2)
+      vite: 4.4.7(@types/node@20.4.2)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -4871,8 +4871,8 @@ packages:
       - terser
     dev: true
 
-  /vite@4.4.5(@types/node@20.4.2):
-    resolution: {integrity: sha512-4m5kEtAWHYr0O1Fu7rZp64CfO1PsRGZlD3TAB32UmQlpd7qg15VF7ROqGN5CyqN7HFuwr7ICNM2+fDWRqFEKaA==}
+  /vite@4.4.7(@types/node@20.4.2):
+    resolution: {integrity: sha512-6pYf9QJ1mHylfVh39HpuSfMPojPSKVxZvnclX1K1FyZ1PXDOcLBibdq5t1qxJSnL63ca8Wf4zts6mD8u8oc9Fw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -4959,7 +4959,7 @@ packages:
       strip-literal: 1.0.1
       tinybench: 2.5.0
       tinypool: 0.6.0
-      vite: 4.4.5(@types/node@20.4.2)
+      vite: 4.4.7(@types/node@20.4.2)
       vite-node: 0.33.0(@types/node@20.4.2)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:

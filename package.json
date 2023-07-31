@@ -69,14 +69,14 @@
         "typedoc": "^0.24.8",
         "typedoc-theme-hierarchy": "^4.0.0",
         "typescript": "^5.1.6",
-        "vite": "^4.4.5",
+        "vite": "^4.4.7",
         "vitest": "^0.33.0"
     },
     "peerDependencies": {
         "axios": ">=1.4.0"
     },
     "dependencies": {
-        "@nodecfdi/cfdiutils-common": "^1.2.5",
+        "@nodecfdi/cfdiutils-common": "^1.2.6",
         "@nodecfdi/sat-estado-cfdi": "^2.0.2"
     },
     "commitlint": {
