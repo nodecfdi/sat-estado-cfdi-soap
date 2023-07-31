@@ -1,10 +1,8 @@
-import { Consumer, ConsumerClientInterface } from '@nodecfdi/sat-estado-cfdi';
+import { Consumer, type ConsumerClientInterface } from '@nodecfdi/sat-estado-cfdi';
 import { DiscoverExtractor } from '@nodecfdi/cfdi-expresiones';
 
 export class ComplianceTester {
-    private client: ConsumerClientInterface;
-
-    constructor(client: ConsumerClientInterface) {
+    constructor(private readonly client: ConsumerClientInterface) {
         this.client = client;
     }
 
@@ -12,9 +10,11 @@ export class ComplianceTester {
         const contactWebserviceWithActiveCfdi = async (): Promise<void> => {
             await this.contactWebServiceWithActiveCfdi();
         };
+
         const contactWebserviceWithCancelledCfdi = async (): Promise<void> => {
             await this.contactWebServiceWithCancelledCfdi();
         };
+
         const tests = [contactWebserviceWithActiveCfdi, contactWebserviceWithCancelledCfdi];
         const promises = tests.map(async (clousere) => {
             try {
@@ -37,9 +37,9 @@ export class ComplianceTester {
                 rr: 'DIM8701081LA',
                 tt: '2010.01',
                 id: 'CEE4BE01-ADFA-4DEB-8421-ADD60F0BEDAC',
-                fe: '/OAgdg=='
+                fe: '/OAgdg==',
             },
-            'CFDI33'
+            'CFDI33',
         );
         const consumer = new Consumer(this.client);
         const response = await consumer.executeAsync(expression);
@@ -47,15 +47,19 @@ export class ComplianceTester {
         if (!response.getQuery().isFound()) {
             throw new Error('It was expected CFDI status request: found');
         }
+
         if (!response.getDocument().isActive()) {
             throw new Error('It was expected CFDI status active: active');
         }
+
         if (!response.getCancellable().cancellableByApproval()) {
             throw new Error('It was expected CFDI status cancellable: directMethod');
         }
+
         if (!response.getCancellation().isUndefined()) {
             throw new Error('It was expected CFDI status cancellation: undefined');
         }
+
         if (!response.getEfos().isExcluded()) {
             throw new Error('It was expected the efos status: excluded');
         }
@@ -69,9 +73,9 @@ export class ComplianceTester {
                 rr: 'XEXX010101000',
                 tt: '8413.00',
                 id: '3be40815-916c-4c91-84e2-6070d4bc3949',
-                fe: '3f86Og=='
+                fe: '3f86Og==',
             },
-            'CFDI33'
+            'CFDI33',
         );
 
         const consumer = new Consumer(this.client);
@@ -80,15 +84,19 @@ export class ComplianceTester {
         if (!response.getQuery().isFound()) {
             throw new Error('It was expected CFDI status request: found');
         }
+
         if (!response.getDocument().isCancelled()) {
             throw new Error('It was expected CFDI status active: cancelled');
         }
+
         if (!response.getCancellable().notCancellable()) {
             throw new Error('It was expected CFDI status cancellable: notCancellable');
         }
+
         if (!response.getCancellation().isUndefined()) {
             throw new Error('It was expected CFDI status cancellation: undefined');
         }
+
         if (!response.getEfos().isExcluded()) {
             throw new Error('It was expected the efos status: excluded');
         }

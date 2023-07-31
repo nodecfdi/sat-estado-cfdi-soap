@@ -1,7 +1,7 @@
-import { ConsumerClientResponseInterface } from '@nodecfdi/sat-estado-cfdi';
-import { SoapClientFactory } from '~/soap-client-factory';
-import { SoapConsumerClient } from '~/soap-consumer-client';
+import { type ConsumerClientResponseInterface } from '@nodecfdi/sat-estado-cfdi';
 import { SpySoapConsumerClient } from '../spy-soap-consumer-client';
+import { SoapClientFactory } from 'src/soap-client-factory';
+import { SoapConsumerClient } from 'src/soap-consumer-client';
 
 describe('My Test Suite', () => {
     it('Consumer Client Can Be Created Without Arguments', () => {
@@ -21,12 +21,12 @@ describe('My Test Suite', () => {
             EsCancelable: '',
             Estado: '',
             EstatusCancelacion: '',
-            ValidacionEFOS: ''
+            ValidacionEFOS: '',
         };
-        const client = new SpySoapConsumerClient(callReturn);
+        const client = new SpySoapConsumerClient(Promise.resolve(callReturn));
         const response = await client.consume<ConsumerClientResponseInterface>(
             'https://consultaqr.facturaelectronica.sat.gob.mx/ConsultaCFDIService.svc?wsdl',
-            'expression'
+            'expression',
         );
         expect(response.get('Estado')).toBe('');
     });
@@ -37,12 +37,12 @@ describe('My Test Suite', () => {
             EsCancelable: '',
             Estado: 'X - dummy!',
             EstatusCancelacion: '',
-            ValidacionEFOS: ''
+            ValidacionEFOS: '',
         };
-        const client = new SpySoapConsumerClient(callReturn);
+        const client = new SpySoapConsumerClient(Promise.resolve(callReturn));
         const response = await client.consume<ConsumerClientResponseInterface>(
             'https://consultaqr.facturaelectronica.sat.gob.mx/ConsultaCFDIService.svc?wsdl',
-            'expression'
+            'expression',
         );
         expect(response.get('Estado')).toBe('X - dummy!');
     });

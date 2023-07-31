@@ -1,44 +1,24 @@
-import { SoapConsumerClient } from '~/soap-consumer-client';
-import { Client } from 'soap';
-
-interface Response extends Record<string, string | null> {
-    CodigoEstatus: string;
-    EsCancelable: null | string;
-    Estado: string;
-    EstatusCancelacion: null | string;
-    ValidacionEFOS: null | string;
-}
+import { type AxiosInstance } from 'axios';
+import { type Response, SoapConsumerClient } from 'src/soap-consumer-client';
 
 export class SpySoapConsumerClient extends SoapConsumerClient {
-    public lastSoapClient?: Client;
+    public lastSoapClient?: AxiosInstance;
 
     public lastArguments?: string;
 
     public lastOptions?: Record<string, unknown>;
 
-    public callConsultaReturn: {
-        CodigoEstatus: string;
-        EsCancelable: null | string;
-        Estado: string;
-        EstatusCancelacion: null | string;
-        ValidacionEFOS: null | string;
-    };
+    public callConsultaReturn: Promise<Response>;
 
-    constructor(callConsultaReturn: {
-        CodigoEstatus: string;
-        EsCancelable: null | string;
-        Estado: string;
-        EstatusCancelacion: null | string;
-        ValidacionEFOS: null | string;
-    }) {
+    constructor(callConsultaReturn: Promise<Response>) {
         super();
         this.callConsultaReturn = callConsultaReturn;
     }
 
-    protected override async callConsulta(client: Client, args: string): Promise<Response> {
+    protected override async callConsulta(client: AxiosInstance, args: string): Promise<Response> {
         this.lastSoapClient = client;
         this.lastArguments = args;
 
-        return Promise.resolve(this.callConsultaReturn);
+        return this.callConsultaReturn;
     }
 }

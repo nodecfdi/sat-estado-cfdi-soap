@@ -1,6 +1,6 @@
-import { CNode, CNodeHasValueInterface, XmlNodeUtils } from '@nodecfdi/cfdiutils-common';
-import { ConsumerClientInterface, ConsumerClientResponse } from '@nodecfdi/sat-estado-cfdi';
-import { AxiosInstance } from 'axios';
+import { type CNode, type CNodeHasValueInterface, XmlNodeUtils } from '@nodecfdi/cfdiutils-common';
+import { type ConsumerClientInterface, ConsumerClientResponse } from '@nodecfdi/sat-estado-cfdi';
+import { type AxiosInstance } from 'axios';
 import { SoapClientFactory } from './soap-client-factory';
 
 export interface Response extends Record<string, string | null> {
@@ -12,10 +12,10 @@ export interface Response extends Record<string, string | null> {
 }
 
 export class SoapConsumerClient implements ConsumerClientInterface {
-    private soapClientFactory: SoapClientFactory;
+    private readonly soapClientFactory: SoapClientFactory;
 
     constructor(factory?: SoapClientFactory) {
-        this.soapClientFactory = factory || new SoapClientFactory();
+        this.soapClientFactory = factory ?? new SoapClientFactory();
     }
 
     public getSoapClientFactory(): SoapClientFactory {
@@ -24,7 +24,7 @@ export class SoapConsumerClient implements ConsumerClientInterface {
 
     public async consume<ConsumerClientResponseInterface>(
         uri: string,
-        expression: string
+        expression: string,
     ): Promise<ConsumerClientResponseInterface> {
         const soapClient = this.getSoapClientFactory().create(uri);
         // make call
@@ -45,9 +45,9 @@ export class SoapConsumerClient implements ConsumerClientInterface {
                       <tem:expresionImpresa> <![CDATA[${arg}]]></tem:expresionImpresa>
                    </tem:Consulta>
                 </soapenv:Body>
-             </soapenv:Envelope>`
+             </soapenv:Envelope>`,
         );
-        const document = XmlNodeUtils.nodeFromXmlString(response.data);
+        const document = XmlNodeUtils.nodeFromXmlString(response.data as string);
 
         const path = ['s:Body', 'ConsultaResponse', 'ConsultaResult'];
 
@@ -62,11 +62,11 @@ export class SoapConsumerClient implements ConsumerClientInterface {
             EsCancelable: this.getValue(document.searchNode(...path, 'a:EsCancelable') as CNode),
             Estado: this.getValue(document.searchNode(...path, 'a:Estado') as CNode) as string,
             EstatusCancelacion: this.getValue(document.searchNode(...path, 'a:EstatusCancelacion') as CNode),
-            ValidacionEFOS: this.getValue(document.searchNode(...path, 'a:ValidacionEFOS') as CNode)
+            ValidacionEFOS: this.getValue(document.searchNode(...path, 'a:ValidacionEFOS') as CNode),
         };
     }
 
     private getValue(node?: CNodeHasValueInterface): string | null {
-        return node && node.value() != '' ? node.value() : null;
+        return node && node.value() !== '' ? node.value() : null;
     }
 }
