@@ -29,6 +29,7 @@ describe('My Test Suite', () => {
             'expression',
         );
         expect(response.get('Estado')).toBe('');
+        expect(response.raw()).toBe(callReturn);
     });
 
     it('Consume Receiving object response', async () => {
@@ -45,5 +46,6 @@ describe('My Test Suite', () => {
             'expression',
         );
         expect(response.get('Estado')).toBe('X - dummy!');
+        expect(response.raw()).toBe(callReturn);
     });
 });
