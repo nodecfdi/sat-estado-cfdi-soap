@@ -15,7 +15,7 @@
     "license": "MIT",
     "type": "module",
     "main": "./dist/sat-estado-cfdi-soap.cjs",
-    "module": "./dist/sat-estado-cfdi-soap.modern.js",
+    "module": "./dist/sat-estado-cfdi-soap.js",
     "unpkg": "./dist/sat-estado-cfdi-soap.global.js",
     "browser": "./dist/sat-estado-cfdi-soap.global.js",
     "types": "./dist/index.d.ts",
