@@ -1,5 +1,17 @@
 # @nodecfdi/sat-estado-cfdi-soap ChangeLog
 
+## 2.1.0
+
+### Added raw method
+
+- Added `ConsumerClientResponseInterface.raw()` method
+- Update config for tsup lib
+- Update types exports for typescript module and commonjs
+- Update to ESM
+- Update dependencies
+- Update CI workflow for fix pipeline to latest github changes
+- Drop support to node versions < 16
+
 ## 2.0.0
 
 ### Major Changes

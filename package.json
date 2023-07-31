@@ -1,6 +1,6 @@
 {
     "name": "@nodecfdi/sat-estado-cfdi-soap",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "description": "Consulta el estado de un CFDI en el webservice del SAT usando SOAP (sin WSDL)",
     "keywords": [
         "SAT",
