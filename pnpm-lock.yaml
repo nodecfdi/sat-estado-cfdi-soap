@@ -9,8 +9,8 @@ dependencies:
     specifier: ^1.2.6
     version: 1.2.6
   '@nodecfdi/sat-estado-cfdi':
-    specifier: ^2.0.2
-    version: 2.0.2
+    specifier: ^2.1.1
+    version: 2.1.1
   axios:
     specifier: '>=1.4.0'
     version: 1.4.0
@@ -1050,9 +1050,9 @@ packages:
       typescript: 5.1.6
     dev: true
 
-  /@nodecfdi/sat-estado-cfdi@2.0.2:
-    resolution: {integrity: sha512-qmtRADNnr3sNqhL/oLXyQ5zuUZ5n+Bd7+mJF2fNh+PiChMco7IynKOjKP0ku5PYYU05hEAt+FT3gQsi9+oWJVA==}
-    engines: {node: '>= 12.0.0'}
+  /@nodecfdi/sat-estado-cfdi@2.1.1:
+    resolution: {integrity: sha512-HZEo5EuJrT9a2FVsXU6ImGl/+8/bUZpb9ss2ZIrWULxOnnChXt0+S7gfejuCd476ElonwlTsYAHEDIc/XEFC2A==}
+    engines: {node: '>= 16'}
     dev: false
 
   /@nodelib/fs.scandir@2.1.5:

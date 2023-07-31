@@ -78,7 +78,7 @@
     },
     "dependencies": {
         "@nodecfdi/cfdiutils-common": "^1.2.6",
-        "@nodecfdi/sat-estado-cfdi": "^2.0.2"
+        "@nodecfdi/sat-estado-cfdi": "^2.1.1"
     },
     "commitlint": {
         "extends": [
