@@ -73,6 +73,9 @@ const response = await consumer.executeAsync('...expression');
 if (response.getCancellable().notCancellable()) {
     console.log('CFDI no es cancelable');
 }
+
+// para ver la respuesta completa
+response.raw()
 ```
 
 ## Soporte
