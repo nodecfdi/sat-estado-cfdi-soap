@@ -46,6 +46,14 @@ yarn add axios @nodecfdi/sat-estado-cfdi-soap
 pnpm add axios @nodecfdi/sat-estado-cfdi-soap
 ```
 
+CDN - Browser
+
+Usa la versión mas reciente publicada cambiando `<latest-version>` por la última version. Ex. ...sat-estado-cfdi-soap@2.1.0/dist...
+
+```html
+<script src="https://unpkg.com/@nodecfdi/sat-estado-cfdi-soap@<latest-version>/dist/sat-estado-cfdi-soap.global.js"></script>
+```
+
 ## Ejemplo básico de uso
 
 ```ts
