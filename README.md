@@ -12,6 +12,12 @@
 [![Violations][badge-violations]][violations]
 [![Total Downloads][badge-downloads]][downloads]
 
+## Proyecto archivado
+
+Este proyecto ha sido archivado en favor de [`nodecfdi/sat-estado-cfdi`](`https://github.com/nodecfdi/sat-estado-cfdi`) versión 2.
+Las características de este proyecto han sido integradas en `nodecfdi/sat-estado-cfdi`, por lo tanto, este proyecto no es mantenido a partir de 2024-04-10.
+Si implementaste la versión 1 de `nodecfdi/sat-estado-cfdi` y `nodecfdi/sat-estado-cfdi-soap` entonces puedes seguir la guía de actualización en <https://nodecfdi.com/librarys/sat-estado-cfdi/upgrade/> para actualizar tu código.
+
 > Consulta el estado de un CFDI en el webservice del SAT usando SOAP (sin WSDL)
 
 :us: The documentation of this project is in spanish as this is the natural language for intented audience.
